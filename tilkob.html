@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forside</title>
     <link rel="stylesheet" href="tilkob.css">
+    <script src="tilkob.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,
@@ -17,12 +18,12 @@
     wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-       <div class="baggrundscirkel">
+       <div class="baggrundscirkel"> <!--Buet baggrund container-->
             <div class="overskrift">
                 <img src="billeder/fem.svg" alt="">
                 <h1 class="tilkob-overskrift">Vælg dine tilkøb</h1>
             </div>
-            <div class="container">
+            <div class="container"> <!--Hovedcontainer for boks1 og boks2-->
                 <div id="boks1">
                     <div class="kort">
                         <h3>Opsætning af reol</h3>
@@ -32,12 +33,14 @@
                     <div class="kort">
                         <h3>Nedtagning af din reol</h3>
                         <img src="billeder/highfive-brun.svg" alt="">
-                        <p class="pris">250,- pr. reol</p>
+                        <p class="pris">250,-</p>
+                        <span class="note">pr. reol</span> <!--span bruges til ekstra små tekststykker-->
                     </div>
                     <div class="kort">
                         <h3>Regelmæssig oprydning af din reol</h3>
                         <img src="billeder/highfive-brun.svg" alt="">
-                        <p class="pris">45,- pr. uge</p>
+                        <p class="pris">45,-</p>
+                        <span class="note">pr. uge</span>
                     </div>
                     <div class="kort">
                         <h3>Forsendelse af prismærker</h3>
@@ -52,6 +55,7 @@
                     </div> 
                 </div>
                 <div id="boks2">
+                    <p id="valgt-pris"></p>
                 </div>
             </div>
         </div>

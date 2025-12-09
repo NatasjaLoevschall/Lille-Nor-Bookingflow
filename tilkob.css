@@ -116,11 +116,20 @@ body {
     height: 5%;
 }
 
+/*boks2 flexboks med valgt pris*/
 
 #boks2{
     width: 25%; 
     height: 85%;
     background-color:#534038;
     border-radius: 50px;
+    color: white;
 }
-
+#valgt-pris{
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40%;
+    font-family: 'Source Sans 3', sans-serif;
+}
