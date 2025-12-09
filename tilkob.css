@@ -7,26 +7,31 @@
 body {
     background-color: #FBF4EE;
 }
-.overskrift h1{
-    font-size: 32px;
-    color: #3a2f2f;
-    font-weight: 600;
-    text-align: center;
-}
+/*overskrift flexboks*/
+
 .overskrift{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
     gap: 20px;
+    margin-top: 30px;
+}
+.overskrift h1{
+    font-size: 27px;
+    color: #3a2f2f;
+    font-weight: 700;
+    text-align: center;
 }
 .overskrift img{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }
+
+/*baggrundsbillede flexboks*/
+
 .baggrundscirkel {
     width: 100%;
-    height: 1000px;
+    height: 100vh;
     background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
     background-repeat: no-repeat;
     background-size: cover; 
@@ -39,36 +44,31 @@ body {
     margin-bottom: 40px;        
 }
 
+/*container med de to bokse*/
+
 .container {
     width: 80%;
-    height: 750px;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
 }
+
+/*boks1 flexboks med kort*/
 
 #boks1{
     width: 72%;
-    align-content: flex-start;
-    display: flex;
-    justify-content: center;
-    border-radius: 50px;
-}
-/*små kort*/
-.kort-container {
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
-    gap: 80px;
-    width: 100%;
-    height: 100%;
+    gap: 40px;
+    
 }
-
-.kort {
-    width: 230px;
-    height: 230px;
+.kort{
+    width: 200px;
+    height: 200px;
     background-color: white;
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -114,7 +114,7 @@ body {
 
 #boks2{
     width: 28%; 
-    height: 100%;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
