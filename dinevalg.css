@@ -45,7 +45,6 @@ body {
 }
 
 /*container med de to bokse*/
-
 .container {
     width: 80%;
     height: 90%;
@@ -55,20 +54,16 @@ body {
 }
 
 /*boks1 flexboks med kort*/
-
-#boks1{
+#boks1 {
     width: 72%;
-    height: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 på række */
+    gap: 25px; /* mellemrum mellem kortene */
 }
 
 .kort{
-    width: 190px;
-    height: 190px;
+    width: 160px;
+    height: 160px;
     background-color: white;
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -121,4 +116,3 @@ body {
     background-color:#534038;
     border-radius: 50px;
 }
-
