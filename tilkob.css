@@ -79,27 +79,45 @@ body {
     height: 50px;
 }
 
+/*baggrundsbillede flexboks*/
+
+.baggrundscirkel {
+    width: 100%;
+    height: 100vh;
+    background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;   
+    margin-top: 40px;
+    margin-bottom: 40px;     
+}
+
 /*container med de to bokse*/
 
 .container {
     width: 80%;
-    height: 80%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 /*boks1 flexboks med kort*/
 
 .boks1{
     width: 72%;
-    align-items: flex-start; 
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    gap: 50px;
+    align-items: center;
+    gap: 40px;
 }
+
 .kort{
     width: 190px;
     height: 190px;
@@ -110,30 +128,26 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     font-family: 'Source Sans 3', sans-serif;
-    cursor: pointer;
-    border: 10px solid transparent; /* usynlig border */
-    transition: 0.2s ease;         /* smooth animation */
 }
-.kort:hover {
-    border-color: #C4913D; /* farven på hover-bordet */
-}
+
 .kort img {
     width: 100px;
-    height: 60%;
+    height: 100px;
     object-fit: contain;
     margin-bottom: 10px;
 }
+
 .kort h3 {
     font-size: 16px;
+    margin-bottom: 6px;
     font-weight: 600;
-    height: 20%;
+    color: #3a2f2f;
 }
 
 .pris {
-    height: 15%;
     font-size: 20px;
     font-weight: 700;
 }
@@ -141,22 +155,16 @@ body {
     font-size: 11px;
     margin-top: -5px;
     color: #555;
-    height: 5%;
 }
 
 
 .boks2{
     width: 25%; 
-    height: 85%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color:#534038;
     border-radius: 50px;
-    color: white;
 }
-#valgt-pris{
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40%;
-    font-family: 'Source Sans 3', sans-serif;
-}
+

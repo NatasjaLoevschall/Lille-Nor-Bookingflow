@@ -44,25 +44,30 @@ body {
     margin-bottom: 40px;     
 }
 
-/*container med de to bokse*/
+
 .container {
     width: 80%;
-    height: 90%;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;              /* samme som anden side */
 }
 
 /*boks1 flexboks med kort*/
 #boks1 {
-     flex: 0 0 70%; 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 på række */
-    gap: 25px; /* mellemrum mellem kortene */
+    width: 72%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 25px;              /* mellemrum mellem kortene */
 }
 
+/* kort – ingen fast width, brug flex-basis i stedet */
 .kort{
-    width: 160px;
+    box-sizing: border-box;   /* ← kun her! */
+    flex: 0 0 calc((100% - 3 * 25px) / 4);
     height: 160px;
     background-color: white;
     border-radius: 25px;
@@ -73,7 +78,6 @@ body {
     align-items: center;
     padding: 20px;
     text-align: center;
-    font-family: 'Source Sans 3', sans-serif;
 }
 
 .kort h2 {
@@ -93,7 +97,7 @@ body {
 
 #boks2{
     width: 25%; 
-    height: 60%;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
