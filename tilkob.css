@@ -6,6 +6,59 @@
 
 body {
     background-color: #FBF4EE;
+    color: #332823;
+}
+
+/*baggrundsbillede2 flexboks*/
+
+#baggrundscirkel1 {
+    width: 100%;
+    height: 110vh;
+    background-image: url('billeder/bue1.svg'); /*gør buen til baggrundsbillede*/
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;        
+}
+#container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#boks1{
+    width: 72%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+#stand{
+    width: 80%;
+    height: 80%;
+}
+
+/*baggrundsbillede2 flexboks*/
+#baggrundscirkel2 {
+    width: 100%;
+    height: 110vh;
+    background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;   
+    margin-bottom: 40px;     
 }
 /*overskrift flexboks*/
 
@@ -18,30 +71,12 @@ body {
 }
 .overskrift h1{
     font-size: 27px;
-    color: #3a2f2f;
     font-weight: 700;
     text-align: center;
 }
 .overskrift img{
     width: 50px;
     height: 50px;
-}
-
-/*baggrundsbillede flexboks*/
-
-.baggrundscirkel {
-    width: 100%;
-    height: 110vh;
-    background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;
-    display: flex; 
-    flex-direction: column;              
-    justify-content: center;    
-    align-items: center;   
-    margin-top: 40px;
-    margin-bottom: 40px;     
 }
 
 /*container med de to bokse*/
@@ -57,7 +92,7 @@ body {
 
 /*boks1 flexboks med kort*/
 
-#boks1{
+.boks1{
     width: 72%;
     align-items: flex-start; 
     display: flex;
@@ -94,7 +129,6 @@ body {
 .kort h3 {
     font-size: 16px;
     font-weight: 600;
-    color: #3a2f2f;
     height: 20%;
 }
 
@@ -102,13 +136,7 @@ body {
     height: 15%;
     font-size: 20px;
     font-weight: 700;
-    color: #3a2f2f;
 }
-
-.pris.gratis {
-    color: #000;
-}
-
 .note {
     font-size: 11px;
     margin-top: -5px;
@@ -116,9 +144,8 @@ body {
     height: 5%;
 }
 
-/*boks2 flexboks med valgt pris*/
 
-#boks2{
+.boks2{
     width: 25%; 
     height: 85%;
     background-color:#534038;
