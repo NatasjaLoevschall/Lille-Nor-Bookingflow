@@ -20,6 +20,10 @@ body {
     margin-bottom: 30px;
     gap: 20px;
 }
+.overskrift img{
+    width: 60px;
+    height: 60px;
+}
 .baggrundscirkel {
     width: 100%;
     height: 1000px;
