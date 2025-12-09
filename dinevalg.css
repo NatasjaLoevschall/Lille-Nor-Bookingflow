@@ -93,6 +93,7 @@ body {
     border-color: #C4913D; /* farven på hover-bordet */
 }
 
+
 .pris {
     font-size: 20px;
     font-weight: 300;
@@ -108,4 +109,63 @@ body {
     align-items: center;
     background-color:#534038;
     border-radius: 50px;
+}
+
+/* brun boks til højre */
+#boks2{
+    width: 25%; 
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color:#534038;
+    border-radius: 50px;
+    color: white;
+    padding: 40px 35px;
+    gap: 15px;
+}
+
+/* overskrift i brun boks */
+#boks2 h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+/* generelle p'er i brun boks */
+#boks2 p{
+    font-size: 18px;
+}
+
+
+/* nederste prislinje */
+.prislinje{
+    margin-top: auto;            /* skubber den ned i bunden */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    border-top: 2px solid white;
+    padding-top: 20px;
+}
+
+.valg-linje {
+    display: flex;
+    align-items: center;
+    gap: 12px;                 /* afstand mellem ikon og tekst */
+    width: 100%;
+}
+
+.valg-ikon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.valg-linje p {
+    font-size: 18px;
+    color: white;
+    margin: 0;
 }
