@@ -55,7 +55,7 @@ body {
 
 /*boks1 flexboks med kort*/
 #boks1 {
-    width: 72%;
+     flex: 0 0 70%; 
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 på række */
     gap: 25px; /* mellemrum mellem kortene */
@@ -76,40 +76,24 @@ body {
     font-family: 'Source Sans 3', sans-serif;
 }
 
-.kort img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.kort h3 {
-    font-size: 16px;
+.kort h2 {
+    font-size: 32px;
     margin-bottom: 6px;
-    font-weight: 600;
+    font-weight: 300;
     color: #3a2f2f;
+    margin-top: 30px;
 }
 
 .pris {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 300;
     color: #3a2f2f;
+    margin-top: 30px;
 }
-
-.pris.gratis {
-    color: #000;
-}
-
-.note {
-    font-size: 11px;
-    margin-top: -5px;
-    color: #555;
-}
-
 
 #boks2{
     width: 25%; 
-    height: 80%;
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
