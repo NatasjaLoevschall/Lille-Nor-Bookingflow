@@ -8,6 +8,21 @@ body {
     background-color: #FBF4EE;
 }
 
+/*baggrundsbillede2 flexboks*/
+#baggrundscirkel2 {
+    width: 100%;
+    height: 110vh;
+    background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;   
+    margin-bottom: 40px;     
+}
+
 /*overskrift flexboks*/
 .overskrift{
     display: flex;
@@ -30,7 +45,7 @@ body {
 }
 
 /*baggrundsbillede flexboks*/
-.baggrundscirkel {
+.baggrundscirkel2{
     width: 100%;
     height: 100vh;
     background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
