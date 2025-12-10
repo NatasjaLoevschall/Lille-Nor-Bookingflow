@@ -1,98 +1,143 @@
 // ---------------------------------------------------
-// FÆLLES FELTER I BEGGE BRUNE BOKSE
+// FÆLLES FELTER I BRUNE BOKSE
 // ---------------------------------------------------
 
 // Alle prisfelter (øverste + nederste brune boks)
-// Bemærk: vi bruger querySelectorAll("#beloeb") selvom id'er er duplikeret
 const prisFelter = document.querySelectorAll("#beloeb");
 
 // Alle "periode"-felter (øverste + nederste brune boks)
 const periodeFelter = document.querySelectorAll("#valg2");
 
-// Dato-feltet i den NEDERSTE brune boks
+// Alle "reolpakke"-felter (øverste + nederste brune boks)
+const reolFelter = document.querySelectorAll("#valg1");
+
+// Dato-feltet i den nederste brune boks (ved kalenderen)
 const datoFelt = document.getElementById("valgt-dato");
 
-// Alle kort (1 uge, 2 uger, ...)
-const kort = document.querySelectorAll(".kort");
-
 
 // ---------------------------------------------------
-// VARIABLER TIL PRIS
+// VARIABLER TIL PRIS (KUN LEJEPERIODE)
 // ---------------------------------------------------
 
-let pris1 = 0;   // pris fra step 1 (kan sættes senere)
-let pris2 = 0;   // pris for valgt lejeperiode
-let samletPris = pris1 + pris2;
-
-
-// Skriv startpris i begge prisfelter
-opdaterPris();
+let prisLejeperiode = 0;   // pris for valgt lejeperiode (uger)
+let samletPris = prisLejeperiode;
 
 
 // ---------------------------------------------------
 // FUNKTION: OPDATER PRIS I BEGGE BOKSE
 // ---------------------------------------------------
 function opdaterPris() {
-    samletPris = pris1 + pris2;
+    samletPris = prisLejeperiode;
 
     prisFelter.forEach(felt => {
         felt.textContent = samletPris + " kr.";
     });
 }
 
+// skriv startpris (0 kr.) i begge bokse, hvis de findes
+opdaterPris();
+
 
 // ---------------------------------------------------
-// KLIK PÅ LEJEPERIODE-KORT
+// STEP 1 – VÆLG REOLPAKKE (".card")
+// (KUN TEKST, INGEN PRIS)
 // ---------------------------------------------------
-kort.forEach(k => {
-    k.addEventListener("click", () => {
 
-        // Fjern "aktiv" fra alle kort
-        kort.forEach(el => el.classList.remove("aktiv"));
+const cards = document.querySelectorAll(".card");
 
-        // Gør det klikkede kort aktivt (til CSS-border osv.)
-        k.classList.add("aktiv");
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        // Fjern "aktiv" klasse fra alle kort
+        cards.forEach(c => c.classList.remove("card-aktiv"));
 
-        // Hent pris-teksten inde i kortet
-        const prisTekst = k.querySelector(".pris").textContent;
+        // Marker det valgte kort
+        card.classList.add("card-aktiv");
 
-        // Træk tallet ud (fx "395,-" → 395)
-        const tal = prisTekst.match(/\d+/g);
-        pris2 = Number(tal.join(""));
-
-        // Hent overskriften (fx "4 uger")
-        const overskrift = k.querySelector("h2").textContent;
-
-        // Skriv overskriften i BEGGE brune bokse
-        periodeFelter.forEach(felt => {
-            felt.textContent = overskrift;
+        // Håndter knap-tekster (brug data-attributter)
+        cards.forEach(c => {
+            const btn = c.querySelector(".btn");
+            if (btn && btn.dataset.default) {
+                btn.textContent = btn.dataset.default;
+            }
         });
 
-        // Opdater prisen i begge bokse
+        const aktivBtn = card.querySelector(".btn");
+        if (aktivBtn && aktivBtn.dataset.selected) {
+            aktivBtn.textContent = aktivBtn.dataset.selected;
+        }
+
+        // Find reolpakke-navn (h2-tekst)
+        const pakkeNavn = card.querySelector("h2")?.textContent || "";
+
+        // Skriv reolpakke-navn ind i begge "valg1"-felter (hvis de findes)
+        reolFelter.forEach(felt => {
+            felt.textContent = pakkeNavn || "Ingen reolpakke valgt";
+        });
+
+        // INGEN PRIS HER – prisLejeperiode er stadig det eneste tal - HUSK AT TJEKKE OM DEN SKAL VÆRE DER. 
         opdaterPris();
     });
 });
 
 
 // ---------------------------------------------------
-// KALENDER: MÅNEDER + DAGE
+// STEP 2 – VÆLG LEJEPERIODE (".kort")
+// (TEKST + PRIS)
 // ---------------------------------------------------
 
-// Titel (DECEMBER 2025 osv.)
+const kort = document.querySelectorAll(".kort");
+
+kort.forEach(k => {
+    k.addEventListener("click", () => {
+
+        // Fjern aktiv styling fra alle kort
+        kort.forEach(el => el.classList.remove("aktiv"));
+
+        // Gør det klikkede kort aktivt
+        k.classList.add("aktiv");
+
+        // Hent prisen som tekst (fx "395,-")
+        const prisTekst = k.querySelector(".pris")?.textContent || "";
+
+        // Træk alle tal ud af teksten (fx "395,-" → ["395"])
+        const tal = prisTekst.match(/\d+/g);
+
+        // Lav det om til et rigtigt tal
+        prisLejeperiode = tal ? Number(tal.join("")) : 0;
+
+        // Hent overskriften fra kortet (fx "4 uger")
+        const overskrift = k.querySelector("h2")?.textContent || "";
+
+        // Skriv overskriften ind i alle "valg2"-felter
+        periodeFelter.forEach(felt => {
+            felt.textContent = overskrift || "Ingen periode valgt";
+        });
+
+        // Opdater prisen i begge bokse (pris = kun lejeperiode)
+        opdaterPris();
+    });
+});
+
+
+// ---------------------------------------------------
+// STEP 3 – KALENDER: MÅNEDER + DATO-VALG
+// ---------------------------------------------------
+
+// Titel (fx "DECEMBER 2025")
 const titel = document.getElementById("maanedTitel");
 
 // Container til alle dage i kalenderen
 const kalenderDage = document.querySelector(".kalender-dage");
 
-// Pile til næste / forrige måned
-document.getElementById("januarmåned").addEventListener("click", visJanuar);
-document.getElementById("decembermåned").addEventListener("click", visDecember);
+// Pile til næste / forrige måned (kan være null på nogle sider)
+const nextBtn = document.getElementById("januarmåned");
+const prevBtn = document.getElementById("decembermåned");
 
 
-// ---------------------------------------------------
-// HJÆLPEFUNKTION: GIV DAGE KLIK-EVENTS
-// ---------------------------------------------------
+// Hjælpefunktion: giv alle dage klik-events
 function tilfoejDagEvents() {
+    if (!kalenderDage) return;
+
     const dage = kalenderDage.querySelectorAll(".dag");
 
     dage.forEach(dag => {
@@ -108,13 +153,12 @@ function tilfoejDagEvents() {
             dag.classList.add("valgt-dag");
 
             // Lav tekst til den brune boks
-            // titel = fx "DECEMBER 2025"
-            const [maanedNavn, aar] = titel.textContent.split(" ");
+            const [maanedNavn, aar] = (titel?.textContent || "").split(" ");
             const dagNr = dag.textContent.trim();
 
-            const tekst = `Startdato: ${dagNr}. ${maanedNavn.toLowerCase()} ${aar}`;
+            const tekst = `Startdato: ${dagNr}. ${maanedNavn?.toLowerCase()} ${aar || ""}`;
 
-            // Skriv i dato-feltet (kun nederste boks)
+            // Skriv i dato-feltet i nederste boks, hvis den findes
             if (datoFelt) {
                 datoFelt.textContent = tekst;
             }
@@ -123,10 +167,12 @@ function tilfoejDagEvents() {
 }
 
 
-// ---------------------------------------------------
+// --------------------------
 //  MÅNED: DECEMBER 2025
-// ---------------------------------------------------
+// --------------------------
 function visDecember() {
+    if (!titel || !kalenderDage) return;
+
     titel.textContent = "DECEMBER 2025";
 
     kalenderDage.innerHTML = `
@@ -171,10 +217,12 @@ function visDecember() {
 }
 
 
-// ---------------------------------------------------
+// --------------------------
 //  MÅNED: JANUAR 2026
-// ---------------------------------------------------
+// --------------------------
 function visJanuar() {
+    if (!titel || !kalenderDage) return;
+
     titel.textContent = "JANUAR 2026";
 
     kalenderDage.innerHTML = `
@@ -218,8 +266,5 @@ function visJanuar() {
     tilfoejDagEvents();
 }
 
-
-// ---------------------------------------------------
-// Vis december med det samme når siden loader
-// ---------------------------------------------------
+// DECEMBER vises som standard NÅR SIDEN ÅBNES
 visDecember();
