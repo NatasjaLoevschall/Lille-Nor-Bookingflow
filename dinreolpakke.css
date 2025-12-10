@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f0e8e1;
+  }
+  
+  /* Container */
+  .container {
+    width: 1180px;                   /* Gør plads til de brede kort */
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  
+  .title-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .step-icon {
+    width: 50px;            /* størrelse på "01 trin" ikonet */
+  }
+  
+  .title-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* <-- DEN VIGTIGE LINJE */
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.step-icon {
+    width: 50px;
+}
+
+.title-text h1 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 700;
+}
+  
+  
+  /* Wrapper som indeholder alle tre kort */
+  .card-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;                       /* LUFT mellem kortene */
+  }
+  
+  /* Selve kortene */
+  .card {
+    width: 350px;                    /* Gør kortene bredere */
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 40px 35px 35px;
+    text-align: center;
+    border: 3px solid transparent;
+    transition: 0.25s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    cursor: pointer;
+  }
+  
+  .card h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  
+  /* Ikon baggrundscirkel */
+  .icon-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #ffffff;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon {
+    width: 160px;
+  }
+  
+  /* Tekst under ikonet */
+  .desc {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 30px;
+    color: #332823;
+  }
+  
+  /* Knap */
+  .btn {
+    width: 100%;
+    background: #d3ad73;
+    color: #332823;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  /* VALGT kort */
+  .card.selected {
+    border-color: #d3ad73;           /* Gul ramme */
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  }
+  
+  .card.selected .btn {
+    background: #b68d52;
+  }
