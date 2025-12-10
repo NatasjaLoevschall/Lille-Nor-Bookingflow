@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vælg din reol pakke </title>
+    <link rel="stylesheet" href="dinreolpakke.css" />
+</head>
+<body>
+  <section class="container">
+    <div class="title-box">
+        <img src="billeder/nummer1.svg" alt="01 trin" class="step-icon">
+        <h1>Vælg din reolpakke</h1>
+    </div>
+
+    <div class="card-wrapper">
+
+        <!-- BASIC -->
+        <div class="card" data-package="basic">
+            <h2>Basic</h2>
+
+            <div class="icon-circle">
+                <img src="billeder/handup-brown.svg"
+                     data-default="billeder/handup-brown.svg"
+                     data-selected="billeder/handup-brown.svg"
+                     class="icon">
+            </div>
+
+            <p class="desc">
+                Du står for det hele <br>
+                Reol skal passes løbende <br>
+                Reolleje + 18% kommission
+            </p>
+
+            <button class="btn"
+                    data-default="Book Basic"
+                    data-selected="Basic valgt">
+                Book Basic
+            </button>
+        </div>
+
+        <!-- EASY PEASY -->
+        <div class="card" data-package="easy">
+            <h2>Easy Peasy</h2>
+
+            <div class="icon-circle">
+                <img src="billeder/knips-brun.svg"
+                     data-default="billeder/knips-brun.svg"
+                     data-selected="billeder/knips-brun.svg"
+                     class="icon">
+            </div>
+
+            <p class="desc">
+                Vi står for det praktiske <br>
+                3 uger for 995 kr. <br>
+                + 18% kommission
+            </p>
+
+            <button class="btn"
+                    data-default="Book Easy Peasy"
+                    data-selected="Easy Peasy valgt">
+                Book Easy Peasy
+            </button>
+        </div>
+
+        <!-- SIMPLE REUSE -->
+        <div class="card" data-package="reuse">
+            <h2>Simple Reuse</h2>
+
+            <div class="icon-circle">
+                <img src="billeder/handshake-brun.svg"
+                     data-default="billeder/handshake-brun.svg"
+                     data-selected="billeder/handshake-brun.svg"
+                     class="icon">
+            </div>
+
+            <p class="desc">
+                Vi står for alt <br>
+                Håndteringsgebyr på 139 kr. <br>
+                3 uger + vi deler salget 50:50
+            </p>
+
+            <button class="btn"
+                    data-default="Book Simple Reuse"
+                    data-selected="Simple Reuse valgt">
+                Book Simple Reuse
+            </button>
+        </div>
+
+    </div>
+</section>
+<script src="dinreolpakke.js"></script>
+</body>
+</html>
