@@ -218,36 +218,61 @@
             </div>
         </div>
     </div>
-    <div id="baggrundscirkel3"> <!--Buet baggrund container-->
+    <div id="container-oplysninger"> <!--Container for sektion med indtastning af oplysninger-->
         <div id="overskrift2">
             <img src="billeder/seks.svg" alt="">
             <h1>Indtast dine oplysninger</h1>
         </div>
-        <div class="container"> <!--Hovedcontainer for boks1 og boks2-->
-            <div id="boks5">
-                <!--Formular til indtastning af oplysninger-->
-                <form id="oplysninger-form">
-                    <label for="navn">Navn:</label>
-                    <input type="text" id="navn" name="navn" required>
+        <div id="container2"> <!--Hovedcontainer for boks1 og boks2-->
+                <div id="boks5">
+                    <form id="oplysninger-form">
+                        <div id="regler">
+                            <p>Allerede bruger?
+                                <a href="#"><br>Log ind her</a>
+                            </p>
+                            <p>Skal udfyldes *</p>
+                        </div>
+                      
+            
+                        <label for="navn">For- og efternavn *</label>
+                        <input type="text" id="navn" name="navn" required>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
 
-                    <label for="telefon">Telefonnummer:</label>
-                    <input type="tel" id="telefon" name="telefon" required>
+                        <label for="email2">Gentag E-mail *</label>
+                        <input type="email" id="email2" name="email2" required>
 
-                    <label for="firma">Firmanavn:</label>
-                    <input type="text" id="firma" name="firma">
+                        <label for="telefon">Telefonnummer *</label>
+                        <input type="tel" id="telefon" name="telefon" required>
 
-                    <button type="submit">Indsend oplysninger</button>
-                </form> 
-            </div>
+                        <label for="adresse">Adresse *</label>
+                        <input type="text" id="adresse" name="adresse" required>
+
+                        <div class="row">
+                            <div>
+                                <label for="postnr">Postnummer *</label>
+                                <input type="text" id="postnr" name="postnr" required>
+                            </div>
+
+                            <div>
+                                <label for="by">By *</label>
+                                <input type="text" id="by" name="by" required>
+                            </div>
+                        </div>
+
+                        <div class="accept">
+                            <input type="checkbox" id="betingelser" required>
+                            <label for="betingelser">Jeg har læst og acceptere lejebetingelserne (Klik her for at læse dem)</label>
+                        </div>
+                    </form>
+                </div>
             <div id="boksogknap3">
                 <div id="boks6"> <!--Boks til "Dine valg"-->
                     <p id="valgt-oplys"></p>
                 </div>
                 <div id="knap3">
-                    <button>Videre til betaling</button>
+                    <button><a href="#"></a>Videre til betaling</button>
                 </div>
             </div>
         </div>

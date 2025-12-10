@@ -280,14 +280,21 @@ body {
 
 /*indtast dine oplysninger sektion*/
 
-/*overskrift2 flexboks*/
-
+/*store container til overskrift og de 2 bokse*/
+#container-oplysninger{
+    width: 100%;
+    height: 100vh;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;        
+}
+/*overskrift flexboks*/
 #overskrift2{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 60px;
 }
 #overskrift2 h1{
     font-size: 27px;
@@ -297,6 +304,81 @@ body {
 #overskrift2 img{
     width: 50px;
     height: 50px;
+}
+/*container med de to bokse*/
+#container2 {
+   width: 75%;
+   height: 75%;
+   display: flex;
+   justify-content: center;   /* Horisontal centrering */
+   align-items: flex-start;    /* Flugter til toppen */
+   margin-top: 40px;
+}
+
+#boks5{
+    width: 70%;
+}
+/* Label styling */
+#oplysninger-form label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block; /* Får label til ny linje */
+    color: #000;
+}
+#regler{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 83%;
+    margin-bottom: 30px;
+}
+#regler p{
+    font-size: 14px;
+}
+#regler a{
+    color: #332823;
+    text-align: right;
+}
+/* Inputfelter */
+#oplysninger-form input[type="text"],
+#oplysninger-form input[type="email"],
+#oplysninger-form input[type="tel"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #d9ccc4;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    background-color: #fff;
+}
+
+/* Postnummer + by ligger side by side */
+.row {
+    display: flex
+}
+
+.row div {
+    width: 44%;
+}
+
+/* Checkbox-linje */
+.accept {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 20px 0;
+}
+
+.accept input {
+    width: 18px;
+    height: 18px;
+}
+
+
+#oplysninger-form button:hover {
+    background-color: #C4913D;
+    color: white;
 }
 
 /*boks med knap 3*/
@@ -319,8 +401,8 @@ body {
     color: white;
 }
 #knap3 button{
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
     padding-bottom: 15px;
     padding-top: 15px;
     border-radius: 10px;
@@ -334,12 +416,5 @@ body {
     cursor: pointer;
 }
 
-#boks5{
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    gap: 40px;
-}
 
 

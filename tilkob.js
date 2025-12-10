@@ -46,7 +46,7 @@ const output = document.getElementById('valgt-pris');
 const knap2 = document.querySelector("#knap2 button");
 
 // Find baggrundscirkel3 (sektion med tilkøb)
-const oplysningsSektion = document.getElementById("baggrundscirkel3");
+const oplysningsSektion = document.getElementById("container-oplysninger");
 
 // Klik på kort
 kort.forEach(k => {
