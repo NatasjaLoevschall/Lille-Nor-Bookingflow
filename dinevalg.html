@@ -18,12 +18,12 @@
     wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-       <div class="baggrundscirkel2"> <!--Buet baggrund container-->
+       <div id="baggrundscirkel1"> <!--Buet baggrund container-->
             <div class="overskrift">
                 <img src="billeder/to.svg" alt="">
                 <h1 class="vælgdinlejeperiode-overskrift">Vælg din lejeperiode</h1>
             </div>
-            <div class="container">
+            <div class="container"> <!--Hovedcontainer for boks1 og boks2-->
                 <div id="boks1">
                     <div class="kort">
                         <h2>1 uge</h2>
@@ -81,13 +81,13 @@
             </div>
         </div>
 
-        <div id="baggrundscirkel1"> <!--Buet baggrund container-->
+        <div id="baggrundscirkel2"> <!--Buet baggrund container-->
             <div class="overskrift">
                 <img src="billeder/tre.svg" alt="">
                 <h1 class="vælgdinlejeperiode-overskrift">Vælg din start dato</h1>
             </div>
 
-            <div class="container">
+            <div class="container"> <!--Hovedcontainer for boks1 og boks2-->
                 <div id="boks1">
                     <div class="kalender">
 
@@ -106,16 +106,86 @@
                             <div>LØR</div>
                             <div>SØN</div>
                         </div>
-
                         <!-- Datoer -->
-                        <div class="kalender-datoer">
-                        <!-- række 1 -->
+        <div class="kalender-dage">
+            <!-- række 1 -->
+            <div class="dag dag-optaget">1</div>
+            <div class="dag dag-optaget">2</div>
+            <div class="dag dag-optaget">3</div>
+            <div class="dag dag-optaget">4</div>
+            <div class="dag dag-optaget">5</div>
+            <div class="dag dag-optaget">6</div>
+            <div class="dag dag-optaget">7</div>
 
+            <!-- række 2 -->
+            <div class="dag dag-ledig">8</div>
+            <div class="dag dag-ledig">9</div>
+            <div class="dag dag-ledig">10</div>
+            <div class="dag dag-ledig">11</div>
+            <div class="dag dag-ledig">12</div>
+            <div class="dag dag-ledig">13</div>
+            <div class="dag dag-optaget">14</div>
 
-            </div>
+            <!-- række 3 -->
+            <div class="dag dag-ledig">15</div>
+            <div class="dag dag-ledig">16</div>
+            <div class="dag dag-ledig">17</div>
+            <div class="dag dag-ledig">18</div>
+            <div class="dag dag-ledig">19</div>
+            <div class="dag dag-ledig">20</div>
+            <div class="dag dag-optaget">21</div>
 
-        
+            <!-- række 4 -->
+            <div class="dag dag-ledig">22</div>
+            <div class="dag dag-ledig">23</div>
+            <div class="dag dag-optaget">24</div>
+            <div class="dag dag-optaget">25</div>
+            <div class="dag dag-optaget">26</div>
+            <div class="dag dag-ledig">27</div>
+            <div class="dag dag-ledig">28</div>
+
+            <!-- række 5 -->
+            <div class="dag dag-ledig">29</div>
+            <div class="dag dag-ledig">30</div>
+            <div class="dag dag-ledig">31</div>
         </div>
+
+        <!-- prikker nederst -->
+        <div class="kalender-cirkler">
+            <div class="cirkler-item">
+                <span class="cirkel-dot cirkel-ledig"></span>
+                <p>Ledig dato</p>
+            </div>
+            <div class="cirkler-item">
+                <span class="cirkel-dot cirkel-optaget"></span>
+                <p>Optaget dato</p>
+            </div>
+        </div>
+                    </div>
+                </div>
+
+                             <!-- HØJRE BRUN BOKS -->
+                <div id="boks2">
+                    <h2>DINE VALG</h2>
+
+                    <div class="valg-linje">
+                        <img src="billeder/enhvid.svg" alt="01 ikon" class="valg-ikon">
+                        <p id="valg1">Ingen reolleje valgt</p>
+                    </div>
+
+                    <div class="valg-linje">
+                        <img src="billeder/tohvid.svg" alt="02 ikon" class="valg-ikon">
+                        <p id="valg2">Ingen periode valgt</p>
+                    </div>
+
+                    <div class="prislinje">
+                        <p>PRIS</p>
+                        <p id="beloeb">0 kr.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
     </body>
 </html>
