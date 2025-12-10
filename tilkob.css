@@ -13,7 +13,7 @@ body {
 
 #baggrundscirkel1 {
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background-image: url('billeder/bue1.svg'); /*gør buen til baggrundsbillede*/
     background-repeat: no-repeat;
     background-size: cover; 
@@ -23,33 +23,76 @@ body {
     justify-content: center;    
     align-items: center;        
 }
-#container {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
 #boks1{
-    width: 72%;
-    height: 70%;
+    width: 70%;
+    height: 90%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
 }
 #stand{
     width: 80%;
     height: 80%;
+    background-color: white;
+    padding: 60px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+.standinfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.standinfo img{
+    width: 40px;
+    height: 40px;
+}
+.standinfo p{
+    margin-right: 40px;
+    color: #332823;
+}
+/*cursor på tal og farve*/
+.ledig text {
+    cursor: pointer;
+    fill: #507b50; /* mørk grøn farve ved hover */
+}
+
+/*hover på figurer*/
+
+.ledig rect, .ledig path, .ledig polygon {
+    cursor: pointer;
+    fill: #D9F0D9; /* lys grøn farve */
+    transition: 0.2s ease; /* gør hover smooth */
+}
+.ledig rect:hover, .ledig path:hover, .ledig polygon:hover {
+    fill: #88C388; /* mørk grøn farve ved hover */
+}
+.optaget rect, .optaget path, .optaget polygon {
+    cursor: not-allowed;
+    transition: 0.2s ease; /* gør hover smooth */
+}
+.optaget rect:hover, .optaget path:hover, .optaget polygon:hover {
+    fill: #C38894; /* mørk rød farve ved hover */
+}
+/*boks 2 valgt stand*/
+#valgt-stand{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40%;
+    font-family: 'Source Sans 3', sans-serif;
+}  
 
 /*baggrundsbillede2 flexboks*/
 #baggrundscirkel2 {
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
     background-repeat: no-repeat;
     background-size: cover; 
@@ -57,8 +100,7 @@ body {
     display: flex; 
     flex-direction: column;              
     justify-content: center;    
-    align-items: center;   
-    margin-bottom: 40px;     
+    align-items: center;        
 }
 /*overskrift flexboks*/
 
@@ -67,7 +109,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .overskrift h1{
     font-size: 27px;
@@ -82,27 +124,27 @@ body {
 /*container med de to bokse*/
 
 .container {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+   width: 75%;
+   height: 75%;
+   display: flex;
+   justify-content: center;   /* Horisontal centrering */
+   align-items: flex-start;    /* Flugter til toppen */
+   margin-top: 50px;
 }
 
 /*boks1 flexboks med kort*/
 
 .boks1{
-    width: 72%;
+    width: 70%;
     align-items: flex-start; 
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    gap: 50px;
+    gap: 40px;
 }
 .kort{
-    width: 190px;
-    height: 190px;
+    width: 170px;
+    height: 170px;
     background-color: white;
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -122,23 +164,23 @@ body {
 }
 .kort img {
     width: 100px;
-    height: 60%;
+    height: 50%;
     object-fit: contain;
     margin-bottom: 10px;
 }
 .kort h3 {
     font-size: 16px;
     font-weight: 600;
-    height: 20%;
+    height: 30%;
 }
 
 .pris {
-    height: 15%;
+    height: 20%;
     font-size: 20px;
     font-weight: 700;
 }
 .note {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: -5px;
     color: #555;
     height: 5%;
@@ -146,17 +188,18 @@ body {
 
 
 .boks2{
-    width: 25%; 
+    width: 28%; 
     height: 85%;
     background-color:#534038;
     border-radius: 50px;
     color: white;
 }
 #valgt-pris{
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     text-align: center;
     padding: 20px;
     margin-top: 40%;
     font-family: 'Source Sans 3', sans-serif;
 }   
+
