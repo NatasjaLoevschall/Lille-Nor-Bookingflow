@@ -155,15 +155,20 @@
                     <text class="cls-10" transform="translate(160.15 517.91)"><tspan x="0" y="0">INDGANG</tspan></text>
                 </g>
             </svg>
-            <div class="standinfo"> 
-                <img src="billeder/ledig.svg" alt="">
+            <div id="standinfo"> 
+                <img src="billeder/ledig.svg" alt="grøn cirkel der indikerer ledige stande">
                 <p>Ledige stande</p>
-                <img src="billeder/optaget.svg" alt="">
+                <img src="billeder/optaget.svg" alt="rød cirkel der indikerer optaget stande">
                 <p>Optaget stande</p>
             </div> 
             </div>
-            <div class="boks2"> <!--Boks til "Dine valg"-->
-                <p id="valgt-stand"></p>
+            <div id="boksogknap">
+                <div id="boks2"> <!--Boks til "Dine valg"-->
+                    <p id="valgt-stand"></p>
+                </div>
+                <div id="knap">
+                    <button>Vælg stand</button>
+                </div>
             </div>
         </div>
     </div>
@@ -173,7 +178,7 @@
             <h1 class="tilkob-overskrift">Vælg dine tilkøb</h1>
         </div>
         <div class="container"> <!--Hovedcontainer for boks1 og boks2-->
-            <div class="boks1">
+            <div id="boks3">
                 <div class="kort">
                     <h3>Opsætning af reol</h3>
                     <img src="billeder/highfive-brun.svg" alt="">
@@ -203,8 +208,47 @@
                     <p class="pris gratis">Gratis</p>
                 </div> 
             </div>
-            <div class="boks2">
-                <p id="valgt-pris"></p>
+            <div id="boksogknap2">
+                <div id="boks4"> <!--Boks til "Dine valg"-->
+                    <p id="valgt-pris"></p>
+                </div>
+                <div id="knap2">
+                    <button>Vælg tilkøb</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="baggrundscirkel3"> <!--Buet baggrund container-->
+        <div id="overskrift2">
+            <img src="billeder/seks.svg" alt="">
+            <h1>Indtast dine oplysninger</h1>
+        </div>
+        <div class="container"> <!--Hovedcontainer for boks1 og boks2-->
+            <div id="boks5">
+                <!--Formular til indtastning af oplysninger-->
+                <form id="oplysninger-form">
+                    <label for="navn">Navn:</label>
+                    <input type="text" id="navn" name="navn" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefon">Telefonnummer:</label>
+                    <input type="tel" id="telefon" name="telefon" required>
+
+                    <label for="firma">Firmanavn:</label>
+                    <input type="text" id="firma" name="firma">
+
+                    <button type="submit">Indsend oplysninger</button>
+                </form> 
+            </div>
+            <div id="boksogknap3">
+                <div id="boks6"> <!--Boks til "Dine valg"-->
+                    <p id="valgt-oplys"></p>
+                </div>
+                <div id="knap3">
+                    <button>Videre til betaling</button>
+                </div>
             </div>
         </div>
     </div>
