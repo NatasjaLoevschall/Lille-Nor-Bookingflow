@@ -1,57 +1,74 @@
 // Find alle ledige stande (dem du kan klikke på)
-
 const ledigeStande = document.querySelectorAll('.ledig');
 
 // Hvor tallet skal skrives hen
 const valgtStand = document.getElementById('valgt-stand');
 
-// Tilføj klik-event til hver ledig stand
+// Find knappen
+const knap = document.querySelector("#knap button");
+
+// Find baggrundscirkel2 (sektion med tilkøb)
+const tilkobSektion = document.getElementById("baggrundscirkel2");
+
+
+// Klik på en stand
 ledigeStande.forEach(stand => {
 
     stand.addEventListener('click', () => {
 
-        // Hent teksten inde i standen, fx "12"
+        // Find tallet
         const tekst = stand.textContent;
-
-        // Find KUN tal i teksten
         const fundneTal = tekst.match(/\d+/g);
+        let renTal = fundneTal ? fundneTal.join("") : "";
 
-        let renTal = "";
-
-        if (fundneTal) {
-            renTal = fundneTal.join(""); // fx "12"
-        }
-
-        // Skriv tallet i boks2
+        // Sæt teksten
         valgtStand.textContent = "Valgt stand: " + renTal;
+
+        // Vis visuelt valgt stand
+        ledigeStande.forEach(s => s.classList.remove('valgt'));
+        stand.classList.add('valgt');
     });
 });
 
-// Find alle kort i vælg dine køb
-const kort = document.querySelectorAll('.kort');
 
-// Find boks2's tekstfelt
+// Klik på knap1 → scroll til næste sektion
+knap.addEventListener("click", () => {
+
+    tilkobSektion.scrollIntoView({ behavior: "smooth" });
+});
+
+
+// Find alle kort i tilkøb
+const kort = document.querySelectorAll('.kort');
 const output = document.getElementById('valgt-pris');
 
-// Tilføj klik-event til hvert kort
+// Find knap2
+const knap2 = document.querySelector("#knap2 button");
+
+// Find baggrundscirkel3 (sektion med tilkøb)
+const oplysningsSektion = document.getElementById("baggrundscirkel3");
+
+// Klik på kort
 kort.forEach(k => {
+
     k.addEventListener('click', () => {
 
-        const pris = k.querySelector('.pris'); // tag fat i alle priser
-        const prisTekst = pris.textContent;     // hele teksten fx "250,- pr. reol"
+        const pris = k.querySelector('.pris').textContent;
+        const tal = pris.match(/\d+/g);
+        const renPris = tal ? tal.join("") : 0;
 
-        // Find KUN tal fra pris
-        const tal = prisTekst.match(/\d+/g);
-
-        let renPris = 0;
-
-        if (tal) {
-            renPris = tal.join(""); // hvis det er tal så bliver RenPris til tallet fx "250"
-        } else {
-            renPris = 0; // hvis det ikke er tal så bliver renPris 0 / "Gratis"
-        }
-
-        // Skriv det rensede tal i boks2
         output.textContent = "Valg af tilkøb: " + renPris + " kr.";
+
+        // Fjern valgt fra alle kort
+        kort.forEach(kortEl => kortEl.classList.remove('valgtkort'));
+
+        // Tilføj valgt til det kort du klikkede på
+        k.classList.add('valgtkort');
     });
+});
+
+// Klik på knap2 → scroll til næste sektion
+knap2.addEventListener("click", () => {
+
+    oplysningsSektion.scrollIntoView({ behavior: "smooth" });
 });
