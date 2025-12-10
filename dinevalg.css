@@ -62,11 +62,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;              /* mellemrum mellem kortene */
-    /*max-height: 520px; /* tilpas til præcis højde */
-    /*overflow: hidden;  /* skjuler overskydende */
 }
 
-/* kort – ingen fast width, brug flex-basis i stedet */
+
 .kort{
     box-sizing: border-box;   /* ← kun her! */
     flex: 0 0 calc((100% - 3 * 25px) / 4);
@@ -102,7 +100,7 @@ body {
 }
 
 /* brun boks til højre */
-#boks2{
+.boks2{
     width: 20%; 
     height: 70%;
     display: flex;
@@ -177,23 +175,25 @@ body {
 }
 
 .kalender{
-    width: 100%;
+    width: 100%;                 /* fyld hele boks1 */
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 80%;
     background-color: white;
-    padding: 60px;
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-height: 510px;
 }
 
 /* mørk top med måned */
 .kalender-top{
     background-color: #534038;
     border-radius: 30px 30px 0 0;
-    padding: 18px 30px;
+    padding: 28px 30px;
     margin-bottom: 25px;
+    display: flex;
+    justify-content: center;       /* centrerer teksten */
+    align-items: center;
+    gap: 200px;
 }
 
 .kalender-top h2{
@@ -203,32 +203,39 @@ body {
     text-align: center;
 }
 
+/* Pile-knapper */
+.pil {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    color: #ffffff;
+}
+
 /* ugedage-rækken */
 .kalender-ugedage{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 18px;
+    gap: 16px;
     margin-bottom: 10px;
-}
-
-.kalender-ugedage div{
+    padding: 0 20px;
+    color: #332823;
     font-size: 14px;
     text-align: center;
-    letter-spacing: 0.8px;
-    color: #6e605c;
 }
+
 
 /* dato-rækker */
 .kalender-dage{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 18px;
+    gap: 14px;
     margin-bottom: 30px;
+    padding: 0 20px;
 }
 
 .dag{
-    height: 60px;
-    border-radius: 6px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,18 +249,28 @@ body {
     border: 2px solid #9BD18A;
     color: #3a2f2f;
     cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.dag-ledig:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-}
 
 /* optaget datoer – grå firkant */
 .dag-optaget{
     background-color: #8B817C;
     color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+/* ===== KALENDER INTERAKTION ===== */
+
+/* Ledige datoer – hover (mere grøn) */
+.dag-ledig:hover {
+    background-color: #9BD18A;
+    border-color: #9BD18A;
+    color: #ffffff;
+}
+
+/* Optaget datoer – hover (rødlig) */
+.dag-optaget:hover {
+    background-color: #C38894;
 }
 
 /* cirkler nederst */
@@ -287,6 +304,27 @@ body {
     border-color: #8B817C;
     background-color: #8B817C;
 }
+
+  /* Knap */
+  .gul-knap{
+    width: 100%;
+    background: #d3ad73;
+    color: #332823;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+
+
+
+
+
+
+
 
 
 
