@@ -1,15 +1,3 @@
-// Find alle ledige stande (dem du kan klikke på)
-const ledigeStande = document.querySelectorAll('.ledig');
-
-// Hvor tallet skal skrives hen
-const valgtStand = document.getElementById('valgt-stand');
-
-// Find knappen
-const knap = document.querySelector("#knap button");
-
-// Find baggrundscirkel2 (sektion med tilkøb)
-const tilkobSektion = document.getElementById("baggrundscirkel5");
-
 
 // ---------------------------------------------------
 // FÆLLES FELTER I BRUNE BOKSE
@@ -56,6 +44,11 @@ opdaterPris();
 // ---------------------------------------------------
 
 const kort1 = document.querySelectorAll(".kort1");
+// Find knappen
+const knap1 = document.querySelector("#knap1");
+
+// Find baggrundscirkel2 (sektion med tilkøb)
+const kalender = document.getElementById("baggrundscirkel3");
 
 kort1.forEach(k => {
     k.addEventListener("click", () => {
@@ -87,7 +80,11 @@ kort1.forEach(k => {
         opdaterPris();
     });
 });
+// Klik på knap1 → scroll til næste sektion
+knap1.addEventListener("click", () => {
 
+    kalender.scrollIntoView({ behavior: "smooth" });
+});
 
 
 
@@ -104,6 +101,12 @@ const kalenderDage = document.querySelector(".kalender-dage");
 // Pile til næste / forrige måned (kan være null på nogle sider)
 const nextBtn = document.getElementById("januarmåned");
 const prevBtn = document.getElementById("decembermåned");
+
+// Find knappen
+const knap2 = document.querySelector("#knap2");
+
+// Find baggrundscirkel4 (sektion med tilkøb)
+const stand = document.getElementById("baggrundscirkel4");
 
 
 // Hjælpefunktion: giv alle dage klik-events
@@ -137,7 +140,11 @@ function tilfoejDagEvents() {
         });
     });
 }
+// Klik på knap2 → scroll til næste sektion
+knap2.addEventListener("click", () => {
 
+    stand.scrollIntoView({ behavior: "smooth" });
+});
 // --------------------------
 //  MÅNED: DECEMBER 2025
 // --------------------------
@@ -250,6 +257,19 @@ visDecember();
 
 
 
+// Find alle ledige stande (dem du kan klikke på)
+const ledigeStande = document.querySelectorAll('.ledig');
+
+// Hvor tallet skal skrives hen
+const valgtStand = document.getElementById('valgt-stand');
+
+// Find knappen
+const knap3 = document.querySelector("#knap3");
+
+// Find baggrundscirkel5 (sektion med tilkøb)
+const tilkobSektion = document.getElementById("baggrundscirkel5");
+
+
 
 // Klik på en stand
 ledigeStande.forEach(stand => {
@@ -272,7 +292,7 @@ ledigeStande.forEach(stand => {
 
 
 // Klik på knap1 → scroll til næste sektion
-knap.addEventListener("click", () => {
+knap3.addEventListener("click", () => {
 
     tilkobSektion.scrollIntoView({ behavior: "smooth" });
 });
@@ -283,7 +303,7 @@ const kort = document.querySelectorAll('.kort');
 const output = document.getElementById('valgt-pris');
 
 // Find knap2
-const knap2 = document.querySelector("#knap2 button");
+const knap4 = document.querySelector("#knap4");
 
 // Find baggrundscirkel3 (sektion med tilkøb)
 const oplysningsSektion = document.getElementById("container-oplysninger");
@@ -308,7 +328,7 @@ kort.forEach(k => {
 });
 
 // Klik på knap2 → scroll til næste sektion
-knap2.addEventListener("click", () => {
+knap4.addEventListener("click", () => {
 
     oplysningsSektion.scrollIntoView({ behavior: "smooth" });
 });
