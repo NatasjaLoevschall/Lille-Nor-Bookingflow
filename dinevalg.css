@@ -315,18 +315,7 @@ body {
     background-color: #8B817C;
 }
 
-  /* Knap */
-  .gul-knap{
-    width: 100%;
-    background: #d3ad73;
-    color: #332823;
-    border: none;
-    border-radius: 12px;
-    padding: 14px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
+ 
 
 
 
