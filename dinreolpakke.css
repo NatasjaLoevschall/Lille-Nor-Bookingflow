@@ -1,51 +1,20 @@
  #baggrundscirkel1 {
     width: 100%;
     height: 100vh;
-    background-image: url('billeder/baggrundscirkel1.svg'); /*gør buen til baggrundsbillede*/
+    background-image: url('billeder/cirkel1.svg'); /*gør buen til baggrundsbillede*/
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
-    display: flex; 
-    flex-direction: column;              
+    display: flex;              
     justify-content: center;    
-    align-items: center;        
+    align-items: flex-start;        
 }
  
  /* Container */
   .container1 {
     width: 75%;                   /* Gør plads til de brede kort */
-    margin: 0 auto;
-    padding-top: 30px;
+    margin-top: 40px;
   }
-  
-  .title-box {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-  
-  .step-icon {
-    width: 50px;            /* størrelse på "01 trin" ikonet */
-  }
-  
-  .title-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;   /* <-- DEN VIGTIGE LINJE */
-    gap: 16px;
-    margin-bottom: 40px;
-}
-
-.step-icon {
-    width: 50px;
-}
-
-.title-text h1 {
-    font-size: 32px;
-    margin: 0;
-    font-weight: 700;
-}
   
   
   /* Wrapper som indeholder alle tre kort */
@@ -57,7 +26,7 @@
   
   /* Selve kortene */
   .card {
-    width: 23%;                    /* Gør kortene bredere */
+    width: 22%;                    /* Gør kortene bredere */
     background: #ffffff;
     border-radius: 28px;
     padding: 40px 35px 35px;
@@ -66,10 +35,11 @@
     transition: 0.25s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     cursor: pointer;
+    margin-top: 40px;
   }
   
   .card h2 {
-    font-size: 26px;
+    font-size: 22px;
     margin-bottom: 25px;
   }
   

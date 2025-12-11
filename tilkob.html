@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="tilkob.css">
     <link rel="stylesheet" href="dinreolpakke.css">
     <script src="tilkob.js" defer></script>
+    <script src="dinevalg.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,
@@ -21,7 +22,7 @@
 <body>
 <div id="baggrundscirkel1"> <!--Buet baggrund container-->
     <section class="container1">
-    <div class="title-box">
+    <div class="overskrift">
         <img src="billeder/nummer1.svg" alt="01 trin" class="step-icon">
         <h1>Vælg din reolpakke</h1>
     </div>
@@ -100,8 +101,161 @@
         </div>
 
     </div>
+
+    
 </section>
 </div>
+
+<div id="baggrundscirkel2"> <!--Buet baggrund container-->
+            <div class="overskrift">
+                <img src="billeder/to.svg" alt="">
+                <h1 class="vælgdinlejeperiode-overskrift">Vælg din lejeperiode</h1>
+            </div>
+            <div class="container"> 
+                <div id="boks">
+                    <div class="kort1">
+                        <h2>1 uge</h2>
+                        <p class="pris">250,-</p>
+                    </div>
+                    <div class="kort1">
+                        <h2>2 uger</h2>
+                        <p class="pris">395,-</p>
+                    </div>
+                    <div class="kort1">
+                        <h2>3 uger</h2>
+                        <p class="pris">550,-</p>
+                    </div>
+                    <div class="kort1">
+                        <h2>4 uger</h2>
+                        <p class="pris">675,-</p>
+                    </div>
+                    <div class="kort1">
+                        <h2>5 uger</h2>
+                        <p class="pris">800,-</p>
+                    </div> 
+                     <div class="kort1">
+                        <h2>6 uger</h2>
+                        <p class="pris">975,-</p>
+                    </div> 
+                     <div class="kort1">
+                        <h2>7 uger</h2>
+                        <p class="pris">1000,-</p>
+                    </div> 
+                     <div class="kort1">
+                        <h2>8 uger</h2>
+                        <p class="pris">1150,-</p>
+                    </div> 
+                </div>
+
+                  <!-- HØJRE BRUN BOKS - step 2-->
+                  <div class="boksogknap">
+                    <div class="boks"> <!--Boks til "Dine valg"-->
+                 
+                    <div class="tekstboks">
+                    <h2>DINE VALG</h2>
+
+                    <div class="valg-linje">
+                        <img src="billeder/enhvid.svg" alt="01 ikon" class="valg-ikon">
+                        <p id="valg1">Ingen reolleje valgt</p>
+                    </div>
+
+                    <div class="valg-linje">
+                        <img src="billeder/tohvid.svg" alt="02 ikon" class="valg-ikon">
+                        <p id="valg2">Ingen periode valgt</p>
+                    </div>
+
+                    <div class="prislinje">
+                        <p>PRIS</p>
+                        <p id="beloeb">0 kr.</p>
+                    </div>
+                    </div>
+                    </div>
+
+                <div id="knap">
+                    <button>Vælg lejeperiode</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div id="baggrundscirkel3"> <!--Buet baggrund container-->
+        <div class="overskrift">
+            <img src="billeder/tre.svg" alt="">
+            <h1 class="vælgdinlejeperiode-overskrift">Vælg din start dato</h1>
+        </div>
+
+        <div class="container"> <!--Hovedcontainer for boks1 og boks2-->
+            <div id="boks">
+                <div class="kalender">
+
+                    <!-- Mørk top med måned -->
+                    <div class="kalender-top">
+                        <span id="decembermåned" class="pil">&lt;</span>
+                        <h2 id="maanedTitel">DECEMBER 2025</h2>
+                        <span id="januarmåned" class="pil">&gt;</span>
+                    </div>
+
+                    <!-- Ugedage -->
+                    <div class="kalender-ugedage">
+                        <p>MAN</p>
+                        <p>TIR</p>
+                        <p>ONS</p>
+                        <p>TOR</p>
+                        <p>FRE</p>
+                        <p>LØR</p>
+                        <p>SØN</p>
+                    </div>
+                    
+                    <!-- Datoer – udfyldes af JavaScript -->
+                    <div class="kalender-dage">
+                        <!-- JS (visDecember / visJanuar) indsætter dagene her -->
+                    </div>
+                </div>
+                            
+                <div class="kalender-cirkler">
+                    <div class="cirkler-item">
+                        <span class="cirkel-dot cirkel-ledig"></span>
+                        <p>Ledig dato</p>
+                    </div>
+                    <div class="cirkler-item">
+                        <span class="cirkel-dot cirkel-optaget"></span>
+                        <p>Optaget dato</p>
+                    </div>
+                </div>
+            </div>
+                
+                  <!-- HØJRE BRUN BOKS - step 2-->
+                  <div class="boksogknap">
+                    <div class="boks"> <!--Boks til "Dine valg"-->
+                 
+                    <div class="tekstboks">
+                    <h2>DINE VALG</h2>
+
+                    <div class="valg-linje">
+                        <img src="billeder/enhvid.svg" alt="01 ikon" class="valg-ikon">
+                        <p id="valg1">Ingen reolleje valgt</p>
+                    </div>
+
+                    <div class="valg-linje">
+                        <img src="billeder/tohvid.svg" alt="02 ikon" class="valg-ikon">
+                        <p id="valg2">Ingen periode valgt</p>
+                    </div>
+
+                    <div class="prislinje">
+                        <p>PRIS</p>
+                        <p id="beloeb">0 kr.</p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div id="knap">
+                        <button>Vælg lejeperiode</button>
+                    </div>
+                </div>
+        </div>
+        </div>
+
+
 <script src="dinreolpakke.js"></script>
     <div id="baggrundscirkel4"> <!--Buet baggrund container-->
         <div class="overskrift">
