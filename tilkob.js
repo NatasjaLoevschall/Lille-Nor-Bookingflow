@@ -8,7 +8,7 @@ const valgtStand = document.getElementById('valgt-stand');
 const knap = document.querySelector("#knap button");
 
 // Find baggrundscirkel2 (sektion med tilkøb)
-const tilkobSektion = document.getElementById("baggrundscirkel2");
+const tilkobSektion = document.getElementById("baggrundscirkel5");
 
 
 // Klik på en stand

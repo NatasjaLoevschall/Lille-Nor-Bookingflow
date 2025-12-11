@@ -8,6 +8,7 @@ body {
     background-color: #FBF4EE;
     color: #332823;
 }
+
 /*Generelle CSS regler*/
 
 /*overskrift flexboks*/
@@ -40,9 +41,10 @@ body {
    gap: 30px;
 }
 
+
 /*baggrundsbillede2 flexboks*/
 
-#baggrundscirkel1 {
+#baggrundscirkel4 {
     width: 100%;
     height: 100vh;
     background-image: url('billeder/bue1.svg'); /*gør buen til baggrundsbillede*/
@@ -55,7 +57,7 @@ body {
     align-items: center;        
 }
 /*brun boks med knap i*/
-#boksogknap{
+.boksogknap{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,13 +66,7 @@ body {
     width: 28%; 
     gap: 30px;
 }
-#boks2{
-    width: 100%; 
-    height: 85%;
-    background-color:#534038;
-    border-radius: 50px;
-    color: white;
-}
+
 #knap button{
     padding-left: 70px;
     padding-right: 70px;
@@ -142,7 +138,7 @@ body {
 .valgt rect,
 .valgt path,
 .valgt polygon {
-    fill: #5FA76A !important;  /* permanent mørk grøn */
+    fill: #88C388 !important;  /* permanent mørk grøn */
     transition: 0.2s ease;
 }
 
@@ -168,7 +164,7 @@ body {
 }  
 
 /*baggrundsbillede2 flexboks*/
-#baggrundscirkel2 {
+#baggrundscirkel5 {
     width: 100%;
     height: 100vh;
     background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
@@ -237,16 +233,7 @@ body {
     height: 5%;
 }
 /*brun boks med knap i*/
-#boksogknap2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 28%; 
-    gap: 30px;
-}
-#boks4{
+.boks{
     width: 100%; 
     height: 85%;
     background-color:#534038;
@@ -382,25 +369,7 @@ body {
     color: white;
 }
 
-/*boks med knap 3*/
-
-/*brun boks med knap i*/
-#boksogknap3{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 28%; 
-    gap: 30px;
-}
-#boks6{
-    width: 100%; 
-    height: 85%;
-    background-color:#534038;
-    border-radius: 50px;
-    color: white;
-}
+/*der er forskellige knapper fordi de har forskellige funktioner i js*/
 #knap3 button{
     padding-left: 50px;
     padding-right: 50px;
