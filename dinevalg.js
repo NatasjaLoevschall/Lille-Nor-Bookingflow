@@ -85,13 +85,13 @@ cards.forEach(card => {
 // (TEKST + PRIS)
 // ---------------------------------------------------
 
-const kort = document.querySelectorAll(".kort");
+const kort1 = document.querySelectorAll(".kort1");
 
-kort.forEach(k => {
+kort1.forEach(k => {
     k.addEventListener("click", () => {
 
         // Fjern aktiv styling fra alle kort
-        kort.forEach(el => el.classList.remove("aktiv"));
+        kort1.forEach(el => el.classList.remove("aktiv"));
 
         // Gør det klikkede kort aktivt
         k.classList.add("aktiv");
