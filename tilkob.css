@@ -9,6 +9,7 @@ body {
     color: #332823;
 }
 
+
 /*Generelle CSS regler*/
 
 /*overskrift flexboks*/
@@ -19,6 +20,7 @@ body {
     align-items: center;
     gap: 20px;
 }
+
 .overskrift h1{
     font-size: 27px;
     font-weight: 700;
@@ -40,6 +42,245 @@ body {
    margin-top: 40px;
    gap: 30px;
 }
+
+/*baggrundsbillede flexboks - Step 2, vælg din lejeperiode*/
+#baggrundscirkel2{
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;        
+}
+
+/*boks1 flexboks med kort*/
+#boks{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;              /* mellemrum mellem kortene */      
+}
+
+.kort1{
+    box-sizing: border-box;
+    flex: 0 0 calc((100% - 3 * 25px) / 4);
+    height: 190px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 7px solid transparent; /* usynlig border */
+    transition: 0.2s ease;         /* smooth animation */
+}
+
+.kort1 h2 {
+    font-size: 32px;
+    margin-bottom: 6px;
+    font-weight: 300;
+    color: #3a2f2f;
+    margin-top: 40px;
+}
+
+.kort1 p {
+    font-size: 24px;
+    color: #3a2f2f;
+    margin-top: 20px;
+}
+
+.kort1:hover {
+    border-color: #C4913D; /* farven på hover-bordet */
+}
+
+.tekstboks {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* hvis nødvendigt */
+    padding: 30px;
+}
+
+.valg-linje {
+    display: flex;
+    align-items: center;
+    gap: 12px;                 /* afstand mellem ikon og tekst */
+    width: 100%;
+    padding: 10px;
+}
+
+/* nederste prislinje */
+.prislinje{
+    margin-top: auto;            /* skubber den ned i bunden */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    border-top: 2px solid white;
+    padding-top: 20px;
+}
+
+.valg-ikon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/*VÆLG DIN DATO SEKTION*/
+/*Vælg din start dato*/
+
+/*baggrundsbillede2 flexboks*/
+#baggrundscirkel3{
+    width: 100%;
+    height: 100vh;
+    background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;       
+}
+
+.kalender{
+    width: 100%;                 /* fyld hele boks1 */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-height: 510px;
+}
+
+/* mørk top med måned */
+.kalender-top{
+    background-color: #534038;
+    border-radius: 30px 30px 0 0;
+    padding: 28px 30px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;       /* centrerer teksten */
+    align-items: center;
+    gap: 200px;
+}
+
+.kalender-top h2{
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Pile-knapper */
+.pil {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    color: #ffffff;
+}
+
+/* ugedage-rækken */
+.kalender-ugedage{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    color: #332823;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* dato-rækker */
+.kalender-dage{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 14px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.dag{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* ledige datoer – grøn firkant */
+.dag-ledig{
+    background-color: #F0FAF2;
+    border: 2px solid #9BD18A;
+    color: #3a2f2f;
+    cursor: pointer;
+}
+
+
+/* optaget datoer – grå firkant */
+.dag-optaget{
+    background-color: #8B817C;
+    color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+/* ===== KALENDER INTERAKTION ===== */
+
+/* Ledige datoer – hover (mere grøn) */
+.dag-ledig:hover {
+    background-color: #88c388;
+    border-color: #88c388;
+    color: #ffffff;
+}
+
+/* Optaget datoer – hover (rødlig) */
+.dag-optaget:hover {
+    background-color: #C38894;
+}
+
+/* cirkler nederst */
+.kalender-cirkler{
+    margin-top: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.cirkler-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.cirkel-dot{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid #9BD18A;
+    display: inline-block;
+}
+
+.cirkel-ledig{
+    background-color: #F0FAF2;
+}
+
+.cirkel-optaget{
+    border-color: #8B817C;
+    background-color: #8B817C;
+}
+
+
+
+
+
 
 
 /*baggrundsbillede2 flexboks*/
@@ -239,7 +480,13 @@ body {
     background-color:#534038;
     border-radius: 50px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    color: white;
+    gap: 15px;
 }
+
 #knap2 button{
     padding-left: 70px;
     padding-right: 70px;

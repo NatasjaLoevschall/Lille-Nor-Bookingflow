@@ -57,13 +57,12 @@ body {
 }
 
 /*boks1 flexboks med kort*/
-#boks1 {
+#boks{
     width: 70%;
     display: flex;
     flex-wrap: wrap;
     gap: 25px;              /* mellemrum mellem kortene */
 }
-
 
 .kort{
     box-sizing: border-box;
@@ -157,6 +156,17 @@ body {
     color: white;
     margin: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /*Vælg din start dato*/
 
