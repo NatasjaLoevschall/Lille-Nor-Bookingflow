@@ -1,90 +1,120 @@
 
 // ---------------------------------------------------
-// FÆLLES FELTER I BRUNE BOKSE
+// STEP 1 – VÆLG REOLPAKKE
 // ---------------------------------------------------
 
-// Alle prisfelter (øverste + nederste brune boks)
-const prisFelter = document.querySelectorAll("#beloeb");
+// Find alle pakke-kort (Basic, Easy Peasy, Simple Reuse)
+const pakkeKort = document.querySelectorAll('.card');
 
-// Alle "periode"-felter (øverste + nederste brune boks)
-const periodeFelter = document.querySelectorAll("#valg2");
+// Find alle felter der viser den valgte pakke i højre boks
+const pakkeFelter = document.querySelectorAll('#valg1');
 
-// Alle "reolpakke"-felter (øverste + nederste brune boks)
-const reolFelter = document.querySelectorAll("#valg1");
+// Objekt til at gemme valget
+const pakkeState = {
+    label: "Ingen reolleje valgt",
+    pris: 0
+};
 
-// Dato-feltet i den nederste brune boks (ved kalenderen)
-const datoFelt = document.getElementById("valgt-dato");
-
-// ---------------------------------------------------
-// VARIABLER TIL PRIS (KUN LEJEPERIODE)
-// ---------------------------------------------------
-
-let prisLejeperiode = 0;   // pris for valgt lejeperiode (uger)
-let samletPris = prisLejeperiode;
-
-
-// ---------------------------------------------------
-// FUNKTION: OPDATER PRIS I BEGGE BOKSE
-// ---------------------------------------------------
-function opdaterPris() {
-    samletPris = prisLejeperiode;
-
-    prisFelter.forEach(felt => {
-        felt.textContent = samletPris + " kr.";
+// Funktion: opdaterer alle højre bokse med valgt pakke
+function opdaterPakkeVisning() {
+    pakkeFelter.forEach(function(felt) {
+        felt.textContent = pakkeState.label;
     });
+
+    // Hvis du senere vil opdatere totalprisen, kan du kalde opdaterPris()
+    // opdaterPris();
 }
 
-// skriv startpris (0 kr.) i begge bokse, hvis de findes
-opdaterPris();
+// Gennemgå hvert kort og giv knappen et klik-event
+pakkeKort.forEach(function(kort) {
+
+    const btn = kort.querySelector('.btn');
+
+    // Hvis der ikke er en knap i kortet, gør ingenting
+    if (!btn) return;
+
+    btn.addEventListener('click', function() {
+
+        // Fjern aktiv styling fra alle kort
+        pakkeKort.forEach(function(k) {
+            k.classList.remove('aktiv');
+        });
+
+        // Tilføj aktiv styling til det valgte kort
+        kort.classList.add('aktiv');
+
+        // Hent tekst til højre boks
+        const valgtTekst =
+            btn.dataset.selected ||
+            (kort.querySelector('h2') ? kort.querySelector('h2').textContent.trim() : "Valgt pakke");
+
+        // Opdater state-objektet
+        pakkeState.label = valgtTekst;
+
+        // Opdater teksten i alle bokse
+        opdaterPakkeVisning();
+    });
+});
 
 
-// ---------------------------------------------------
-// STEP 2 – VÆLG LEJEPERIODE (".kort")
-// (TEKST + PRIS)
-// ---------------------------------------------------
 
+
+
+// STEP 2 – VÆLG LEJEPERIODE 
+
+// Find alle periodekort
 const kort1 = document.querySelectorAll(".kort1");
-// Find knappen
+
+// Find alle felter der skal vise perioden i højre boks
+const periodeFelter = document.querySelectorAll("#valg2");
+
+// Find prisfeltet i den brune boks
+const prisFelter = document.querySelectorAll("#beloeb");
+
+// Find knappen der fører videre til næste sektion
 const knap1 = document.querySelector("#knap1");
 
-// Find baggrundscirkel2 (sektion med tilkøb)
+// Find næste sektion (kalender)
 const kalender = document.getElementById("baggrundscirkel3");
 
-kort1.forEach(k => {
-    k.addEventListener("click", () => {
+
+// Klik på en periode
+kort1.forEach(kort => {
+
+    kort.addEventListener("click", () => {
 
         // Fjern aktiv styling fra alle kort
         kort1.forEach(el => el.classList.remove("aktiv"));
 
-        // Gør det klikkede kort aktivt
-        k.classList.add("aktiv");
+        // Marker den valgte som aktiv
+        kort.classList.add("aktiv");
 
-        // Hent prisen som tekst (fx "395,-")
-        const prisTekst = k.querySelector(".pris")?.textContent || "";
+        // Hent periode-tekst (f.eks. "4 uger")
+        const periodeTekst = kort.querySelector("h2").textContent;
 
-        // Træk alle tal ud af teksten (fx "395,-" → ["395"])
-        const tal = prisTekst.match(/\d+/g);
-
-        // Lav det om til et rigtigt tal
-        prisLejeperiode = tal ? Number(tal.join("")) : 0;
-
-        // Hent overskriften fra kortet (fx "4 uger")
-        const overskrift = k.querySelector("h2")?.textContent || "";
-
-        // Skriv overskriften ind i alle "valg2"-felter
+        // Skriv perioden i ALLE højre bokse
         periodeFelter.forEach(felt => {
-            felt.textContent = overskrift || "Ingen periode valgt";
+            felt.textContent = periodeTekst;
         });
 
-        // Opdater prisen i begge bokse (pris = kun lejeperiode)
-        opdaterPris();
+        // Hent prisen (fx "675,-")
+        const prisTekst = kort.querySelector(".pris").textContent;
+        const tal = prisTekst.match(/\d+/g);
+        const pris = tal ? Number(tal.join("")) : 0;
+
+        // Skriv pris i ALLE prisfelter
+        prisFelter.forEach(felt => {
+            felt.textContent = pris + " kr.";
+        });
     });
 });
+
 // Klik på knap1 → scroll til næste sektion
 knap1.addEventListener("click", () => {
 
     kalender.scrollIntoView({ behavior: "smooth" });
 });
+
 
 
 
@@ -105,8 +135,11 @@ const prevBtn = document.getElementById("decembermåned");
 // Find knappen
 const knap2 = document.querySelector("#knap2");
 
-// Find baggrundscirkel4 (sektion med tilkøb)
+// Find baggrundscirkel4 (sektion med stand)
 const stand = document.getElementById("baggrundscirkel4");
+
+// Felt i højre boks hvor startdato skal vises 
+const datoFelter = document.querySelectorAll('#valg3');
 
 
 // Hjælpefunktion: giv alle dage klik-events
@@ -131,20 +164,24 @@ function tilfoejDagEvents() {
             const [maanedNavn, aar] = (titel?.textContent || "").split(" ");
             const dagNr = dag.textContent.trim();
 
-            const tekst = `Startdato: ${dagNr}. ${maanedNavn?.toLowerCase()} ${aar || ""}`;
+            const tekst = `Startdato: ${dagNr}. ${maanedNavn ? maanedNavn.toLowerCase() : ""} ${aar || ""}`.trim();
 
-            // Skriv i dato-feltet i nederste boks, hvis den findes
-            if (datoFelt) {
-                datoFelt.textContent = tekst;
-            }
-        });
+            // Skriv i dato-feltet i højre boks, hvis det findes
+            if (datoFelter && datoFelter.length) {
+    datoFelter.forEach(function(f){ f.textContent = tekst; });
+}       
+            });
     });
 }
-// Klik på knap2 → scroll til næste sektion
-knap2.addEventListener("click", () => {
 
-    stand.scrollIntoView({ behavior: "smooth" });
-});
+
+// Klik på knap2 → scroll til næste sektion (stand)
+if (knap2 && stand) {
+    knap2.addEventListener("click", () => {
+        stand.scrollIntoView({ behavior: "smooth" });
+    });
+}
+
 // --------------------------
 //  MÅNED: DECEMBER 2025
 // --------------------------
@@ -244,7 +281,7 @@ function visJanuar() {
     tilfoejDagEvents();
 }
 
-// tilføj event listeners til pilene (hvis de findes)
+// tilføj event listeners til pilene
 if (nextBtn) nextBtn.addEventListener('click', () => {
   visJanuar();
 });
@@ -256,12 +293,16 @@ if (prevBtn) prevBtn.addEventListener('click', () => {
 visDecember();
 
 
+// --------------------------
+//  Stand sektion - step 4
+// --------------------------
+
 
 // Find alle ledige stande (dem du kan klikke på)
 const ledigeStande = document.querySelectorAll('.ledig');
 
 // Hvor tallet skal skrives hen
-const valgtStand = document.getElementById('valgt-stand');
+const valg4Felter = document.querySelectorAll('#valg4');
 
 // Find knappen
 const knap3 = document.querySelector("#knap3");
@@ -270,25 +311,29 @@ const knap3 = document.querySelector("#knap3");
 const tilkobSektion = document.getElementById("baggrundscirkel5");
 
 
-
 // Klik på en stand
-ledigeStande.forEach(stand => {
+ledigeStande.forEach(function(stand) {
 
-    stand.addEventListener('click', () => {
+    stand.addEventListener('click', function() {
 
         // Find tallet
-        const tekst = stand.textContent;
+        const tekst = this.textContent;
         const fundneTal = tekst.match(/\d+/g);
-        let renTal = fundneTal ? fundneTal.join("") : "";
+        const renTal = fundneTal ? fundneTal.join("") : "";
 
-        // Sæt teksten
-        valgtStand.textContent = "Valgt stand: " + renTal;
+        // Sæt teksten i ALLE valg4 felter
+        valg4Felter.forEach(function(felt) {
+            felt.textContent = "Valgt stand: " + renTal;
+        });
 
         // Vis visuelt valgt stand
-        ledigeStande.forEach(s => s.classList.remove('valgt'));
-        stand.classList.add('valgt');
+        ledigeStande.forEach(function(s) {
+            s.classList.remove('valgt');
+        });
+        this.classList.add('valgt');
     });
 });
+
 
 
 // Klik på knap1 → scroll til næste sektion
@@ -298,11 +343,16 @@ knap3.addEventListener("click", () => {
 });
 
 
+
+// --------------------------
+//  Tilkøb sektion - step 5
+// --------------------------
+
 // Find alle kort i tilkøb
 const kort = document.querySelectorAll('.kort');
-const output = document.getElementById('valgt-pris');
+const valg5 = document.getElementById('valg5');
 
-// Find knap2
+// Find knap4
 const knap4 = document.querySelector("#knap4");
 
 // Find baggrundscirkel3 (sektion med tilkøb)
@@ -317,13 +367,23 @@ kort.forEach(k => {
         const tal = pris.match(/\d+/g);
         const renPris = tal ? tal.join("") : 0;
 
-        output.textContent = "Valg af tilkøb: " + renPris + " kr.";
+        valg5.textContent = "Valg af tilkøb: " + renPris + " kr.";
 
         // Fjern valgt fra alle kort
         kort.forEach(kortEl => kortEl.classList.remove('valgtkort'));
 
         // Tilføj valgt til det kort du klikkede på
         k.classList.add('valgtkort');
+
+        // --- læg tilkøbspris oven i den nuværende pris ---
+        const nuvaerende = Number((prisFelter[0].textContent.match(/\d+/g) || ["0"]).join(""));
+        const tilkoeb = Number(renPris) || 0;
+        const nyTotal = nuvaerende + tilkoeb;
+
+        // skriv ny total i alle brune bokse
+        prisFelter.forEach(felt => {
+        felt.textContent = nyTotal + " kr.";
+        });
     });
 });
 

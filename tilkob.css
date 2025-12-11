@@ -128,6 +128,11 @@ body {
     border-color: #C4913D; /* farven på hover-bordet */
 }
 
+.kort1.aktiv {
+    border-color: #C4913D !important; /* samme farve som hover på andre kort */
+
+}
+
 .tekstboks {
     display: flex;
     flex-direction: column;
@@ -162,7 +167,6 @@ body {
 }
 
 /*VÆLG DIN DATO SEKTION*/
-/*Vælg din start dato*/
 
 /*baggrundsbillede2 flexboks*/
 #baggrundscirkel3{
@@ -202,7 +206,7 @@ body {
 
 .kalender-top h2{
     color: #FFFFFF;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
     text-align: center;
 }
@@ -310,13 +314,7 @@ body {
 }
 
 
-
-
-
-
-
 /*baggrundsbillede2 flexboks*/
-
 #baggrundscirkel4 {
     width: 100%;
     height: 100vh;
@@ -329,7 +327,6 @@ body {
     justify-content: center;    
     align-items: center;        
 }
-
 
 
 /*boks med stand*/
