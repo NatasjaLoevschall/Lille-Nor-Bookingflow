@@ -262,9 +262,9 @@ function visJanuar() {
         <div class="dag dag-ledig">30</div>
         <div class="dag dag-ledig">31</div>
     `;
-
-    tilfoejDagEvents();
 }
 
 // DECEMBER vises som standard NÅR SIDEN ÅBNES
 visDecember();
+
+
