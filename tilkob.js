@@ -367,7 +367,10 @@ kort.forEach(k => {
         const tal = pris.match(/\d+/g);
         const renPris = tal ? tal.join("") : 0;
 
-        valg5.textContent = "Valg af tilkøb: " + renPris + " kr.";
+    // Sæt teksten i ALLE valg5 felter
+    document.querySelectorAll('#valg5').forEach(felt => {
+    felt.textContent = "Valg af tilkøb: " + renPris + " kr.";
+});
 
         // Fjern valgt fra alle kort
         kort.forEach(kortEl => kortEl.classList.remove('valgtkort'));
