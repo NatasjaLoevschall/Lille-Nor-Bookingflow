@@ -11,10 +11,10 @@ body {
 /* Vælg din lejeperiode*/
 
 /*baggrundsbillede flexboks*/
-#baggrundscirkel1 {
+#baggrundscirkel2{
     width: 100%;
     height: 100vh;
-    background-image: url('billeder/bue1.svg'); /*gør buen til baggrundsbillede*/
+    background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
@@ -66,7 +66,7 @@ body {
 
 
 .kort{
-    box-sizing: border-box;   /* ← kun her! */
+    box-sizing: border-box;
     flex: 0 0 calc((100% - 3 * 25px) / 4);
     height: 190px;
     background-color: white;
@@ -161,7 +161,7 @@ body {
 /*Vælg din start dato*/
 
 /*baggrundsbillede2 flexboks*/
-#baggrundscirkel2{
+#baggrundscirkel3{
     width: 100%;
     height: 100vh;
     background-image: url('billeder/bue2.svg'); /*gør buen til baggrundsbillede*/
@@ -263,8 +263,8 @@ body {
 
 /* Ledige datoer – hover (mere grøn) */
 .dag-ledig:hover {
-    background-color: #9BD18A;
-    border-color: #9BD18A;
+    background-color: #88c388;
+    border-color: #88c388;
     color: #ffffff;
 }
 

@@ -55,7 +55,7 @@ body {
     border-radius: 28px;
     padding: 40px 35px 35px;
     text-align: center;
-    border: 3px solid transparent;
+    border: 7px solid transparent;
     transition: 0.25s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     cursor: pointer;
