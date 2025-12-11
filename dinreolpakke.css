@@ -1,12 +1,19 @@
-body {
-    margin: 0;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    background: #f0e8e1;
-  }
-  
-  /* Container */
-  .container {
-    width: 1180px;                   /* Gør plads til de brede kort */
+ #baggrundscirkel1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url('billeder/baggrundscirkel1.svg'); /*gør buen til baggrundsbillede*/
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column;              
+    justify-content: center;    
+    align-items: center;        
+}
+ 
+ /* Container */
+  .container1 {
+    width: 75%;                   /* Gør plads til de brede kort */
     margin: 0 auto;
     padding-top: 30px;
   }
@@ -45,12 +52,12 @@ body {
   .card-wrapper {
     display: flex;
     justify-content: space-between;
-    gap: 35px;                       /* LUFT mellem kortene */
+    gap: 40px;                       /* LUFT mellem kortene */
   }
   
   /* Selve kortene */
   .card {
-    width: 350px;                    /* Gør kortene bredere */
+    width: 23%;                    /* Gør kortene bredere */
     background: #ffffff;
     border-radius: 28px;
     padding: 40px 35px 35px;
@@ -92,11 +99,11 @@ body {
   
   /* Knap */
   .btn {
-    width: 100%;
-    background: #d3ad73;
+    width: 80%;
+    background: #E4B66C;
     color: #332823;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 14px;
     font-size: 16px;
     cursor: pointer;
