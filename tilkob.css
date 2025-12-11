@@ -37,6 +37,7 @@ body {
    justify-content: center;   /* Horisontal centrering */
    align-items: flex-start;    /* Flugter til toppen */
    margin-top: 40px;
+   gap: 30px;
 }
 
 /*baggrundsbillede2 flexboks*/
