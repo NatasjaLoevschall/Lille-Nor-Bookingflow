@@ -40,9 +40,40 @@ body {
    justify-content: center;   /* Horisontal centrering */
    align-items: flex-start;    /* Flugter til toppen */
    margin-top: 40px;
-   gap: 30px;
+   gap: 40px;
 }
 
+/*brun boks med knap i*/
+.boksogknap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 28%; 
+    gap: 30px;
+}
+.knap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    
+}
+.knap button{
+    background-color: #E4B66C;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    
+}
+.knap button:hover{
+    background-color: #C4913D;
+    color: white;
+    cursor: pointer;
+}
 /*baggrundsbillede flexboks - Step 2, vælg din lejeperiode*/
 #baggrundscirkel2{
     width: 100%;
@@ -67,7 +98,7 @@ body {
 .kort1{
     box-sizing: border-box;
     flex: 0 0 calc((100% - 3 * 25px) / 4);
-    height: 190px;
+    height: 180px;
     background-color: white;
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -79,17 +110,18 @@ body {
 }
 
 .kort1 h2 {
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 6px;
-    font-weight: 300;
+    font-weight: 600;
     color: #3a2f2f;
     margin-top: 40px;
 }
 
 .kort1 p {
-    font-size: 24px;
+    font-size: 20px;
     color: #3a2f2f;
     margin-top: 20px;
+    font-weight: 300;
 }
 
 .kort1:hover {
@@ -147,7 +179,7 @@ body {
 }
 
 .kalender{
-    width: 100%;                 /* fyld hele boks1 */
+    width: 95%;  
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -249,7 +281,7 @@ body {
 .kalender-cirkler{
     margin-top: auto;
     display: flex;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
 }
 
@@ -261,8 +293,8 @@ body {
 }
 
 .cirkel-dot{
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 3px solid #9BD18A;
     display: inline-block;
@@ -297,32 +329,7 @@ body {
     justify-content: center;    
     align-items: center;        
 }
-/*brun boks med knap i*/
-.boksogknap{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 28%; 
-    gap: 30px;
-}
 
-#knap button{
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    border-radius: 10px;
-    background-color: #E4B66C;
-    border: none;
-    font-size: 16px;
-}
-#knap button:hover{
-    background-color: #C4913D;
-    color: white;
-    cursor: pointer;
-}
 
 
 /*boks med stand*/
@@ -487,22 +494,6 @@ body {
     gap: 15px;
 }
 
-#knap2 button{
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    border-radius: 10px;
-    background-color: #E4B66C;
-    border: none;
-    font-size: 16px;
-}
-#knap2 button:hover{
-    background-color: #C4913D;
-    color: white;
-    cursor: pointer;
-}
-
 #valgt-pris{
     font-size: 18px;
     font-weight: 500;
@@ -615,23 +606,5 @@ body {
     background-color: #C4913D;
     color: white;
 }
-
-/*der er forskellige knapper fordi de har forskellige funktioner i js*/
-#knap3 button{
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    border-radius: 10px;
-    background-color: #E4B66C;
-    border: none;
-    font-size: 16px;
-}
-#knap3 button:hover{
-    background-color: #C4913D;
-    color: white;
-    cursor: pointer;
-}
-
 
 

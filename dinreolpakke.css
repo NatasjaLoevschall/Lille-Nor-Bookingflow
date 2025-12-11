@@ -42,6 +42,10 @@
     font-size: 22px;
     margin-bottom: 25px;
   }
+  .card p {
+    font-size: 15px;
+    color: #332823;
+  }
   
   /* Ikon baggrundscirkel */
   .icon-circle {
@@ -70,7 +74,7 @@
   /* Knap */
   .btn {
     width: 80%;
-    background: #E4B66C;
+    background:  #E4B66C;
     color: #332823;
     border: none;
     border-radius: 10px;
@@ -87,5 +91,7 @@
   }
   
   .card.selected .btn {
-    background: #b68d52;
+    background: #C4913D;
+    color: #ffffff;
   }
+  
