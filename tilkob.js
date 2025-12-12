@@ -1,3 +1,29 @@
+// Find knappen der fører videre til næste sektion
+const btn = document.querySelector("#btn");
+
+// Find næste sektion (lejeperiode)
+const lejePeriode = document.getElementById("baggrundscirkel2");
+
+// Find alle knapper med class="btn"
+const pakkeKnapper = document.querySelectorAll(".btn");
+
+// Find sektionen de skal scrolle til
+const lejePeriode2 = document.getElementById("baggrundscirkel3");
+
+
+// Klik på knap1 → scroll til næste sektion
+btn.addEventListener("click", () => {
+
+    lejePeriode.scrollIntoView({ behavior: "smooth" });
+});
+
+
+// Giv ALLE knapperne et klik-event
+pakkeKnapper.forEach(knap => {
+    knap.addEventListener("click", () => {
+        lejePeriode2.scrollIntoView({ behavior: "smooth" });
+    });
+});
 
 // ---------------------------------------------------
 // STEP 1 – VÆLG REOLPAKKE
@@ -17,42 +43,42 @@ const pakkeState = {
 
 // Funktion: opdaterer alle højre bokse med valgt pakke
 function opdaterPakkeVisning() {
-    pakkeFelter.forEach(function(felt) {
+    pakkeFelter.forEach(felt => {
         felt.textContent = pakkeState.label;
     });
-
-    // Hvis du senere vil opdatere totalprisen, kan du kalde opdaterPris()
-    // opdaterPris();
 }
 
-// Gennemgå hvert kort og giv knappen et klik-event
-pakkeKort.forEach(function(kort) {
 
-    const btn = kort.querySelector('.btn');
+// Gennemgå hvert kort og giv både .btn OG #btn klik-event
+pakkeKort.forEach(kort => {
 
-    // Hvis der ikke er en knap i kortet, gør ingenting
-    if (!btn) return;
+    // Find *både* .btn OG #btn inde i kort
+    const knapper = kort.querySelectorAll(".btn, #btn");
 
-    btn.addEventListener('click', function() {
+    // Hvis der ikke er knapper, gå videre
+    if (!knapper.length) return;
 
-        // Fjern aktiv styling fra alle kort
-        pakkeKort.forEach(function(k) {
-            k.classList.remove('aktiv');
+    knapper.forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            // Fjern aktiv styling fra alle kort
+            pakkeKort.forEach(k => k.classList.remove("aktiv"));
+
+            // Gør det valgte kort aktivt
+            kort.classList.add("aktiv");
+
+            // Find tekst til højre boks
+            const valgtTekst =
+                btn.dataset.selected ||
+                kort.querySelector("h2").textContent.trim();
+
+            // Opdater state
+            pakkeState.label = valgtTekst;
+
+            // Opdater visning i højre boks(e)
+            opdaterPakkeVisning();
         });
-
-        // Tilføj aktiv styling til det valgte kort
-        kort.classList.add('aktiv');
-
-        // Hent tekst til højre boks
-        const valgtTekst =
-            btn.dataset.selected ||
-            (kort.querySelector('h2') ? kort.querySelector('h2').textContent.trim() : "Valgt pakke");
-
-        // Opdater state-objektet
-        pakkeState.label = valgtTekst;
-
-        // Opdater teksten i alle bokse
-        opdaterPakkeVisning();
     });
 });
 
