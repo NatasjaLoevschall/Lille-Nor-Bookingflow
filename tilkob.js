@@ -158,6 +158,8 @@ const kalenderDage = document.querySelector(".kalender-dage");
 const nextBtn = document.getElementById("januarmåned");
 const prevBtn = document.getElementById("decembermåned");
 
+
+
 // Find knappen
 const knap2 = document.querySelector("#knap2");
 
