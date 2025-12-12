@@ -196,6 +196,7 @@ function tilfoejDagEvents() {
             if (datoFelter && datoFelter.length) {
     datoFelter.forEach(function(f){ f.textContent = tekst; });
 }       
+
             });
     });
 }

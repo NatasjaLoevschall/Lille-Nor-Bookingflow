@@ -356,8 +356,8 @@ body {
     margin-left: 20px;
 }
 #standinfo img{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 3   0px;
 }
 #standinfo p{
     margin-right: 40px;
@@ -377,7 +377,10 @@ body {
     transition: 0.2s ease; /* gør hover smooth */
 }
 .ledig rect:hover, .ledig path:hover, .ledig polygon:hover {
-    fill: #88C388; /* mørk grøn farve ved hover */
+    fill: #88C388; /* mørk grøn farve ved hover */  
+}
+.ledig:hover text {
+    fill: white !important;
 }
 /* Når en stand er valgt */
 .valgt rect,
