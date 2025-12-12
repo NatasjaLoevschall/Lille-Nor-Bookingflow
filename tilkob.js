@@ -32,10 +32,10 @@ pakkeKnapper.forEach(knap => {
 // Find alle pakke-kort (Basic, Easy Peasy, Simple Reuse)
 const pakkeKort = document.querySelectorAll('.card');
 
-// Find alle felter der viser den valgte pakke i højre boks
+// Find det felt hvor teksten skal stå i - højre boks
 const pakkeFelter = document.querySelectorAll('#valg1');
 
-// Objekt til at gemme valget
+// Vi gemmer den valgte pakke i et objekt så den kan genbruges i alle steps
 const pakkeState = {
     label: "Ingen reolleje valgt",
     pris: 0
@@ -49,36 +49,31 @@ function opdaterPakkeVisning() {
 }
 
 
-// Gennemgå hvert kort og giv både .btn OG #btn klik-event
-pakkeKort.forEach(kort => {
+    // Man finder knappen inde i kortet
+    const btn = kort.querySelector('.btn');
+    if (!btn) return;
 
-    // Find *både* .btn OG #btn inde i kort
-    const knapper = kort.querySelectorAll(".btn, #btn");
+    // Man tilføjer et klik-event til knappen 
+    btn.addEventListener('click', function() {
 
-    // Hvis der ikke er knapper, gå videre
-    if (!knapper.length) return;
-
-    knapper.forEach(btn => {
-
-        btn.addEventListener("click", () => {
-
-            // Fjern aktiv styling fra alle kort
-            pakkeKort.forEach(k => k.classList.remove("aktiv"));
-
-            // Gør det valgte kort aktivt
-            kort.classList.add("aktiv");
-
-            // Find tekst til højre boks
-            const valgtTekst =
-                btn.dataset.selected ||
-                kort.querySelector("h2").textContent.trim();
-
-            // Opdater state
-            pakkeState.label = valgtTekst;
-
-            // Opdater visning i højre boks(e)
-            opdaterPakkeVisning();
+        // Vi sørger for at kun et kort er markeret som aktivt
+        pakkeKort.forEach(function(k) {
+            k.classList.remove('aktiv');
         });
+
+        // Tilføj aktiv styling til det valgte kort
+        kort.classList.add('aktiv');
+
+        // Vi finder den tekst der skal stå i den brune boks
+        const valgtTekst =
+            btn.dataset.selected ||
+            (kort.querySelector('h2') ? kort.querySelector('h2').textContent.trim() : "Valgt pakke");
+
+        // Gemmer den vaglte tekst så den kan genbruges
+        pakkeState.label = valgtTekst;
+
+        // Opdater teksten i alle steps fra 1-6
+        opdaterPakkeVisning();
     });
 });
 
