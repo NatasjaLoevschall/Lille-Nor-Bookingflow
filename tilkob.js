@@ -152,7 +152,7 @@ knap1.addEventListener("click", () => {
 // STEP 3 – KALENDER: MÅNEDER + DATO-VALG
 // ---------------------------------------------------
 
-// Titel (fx "DECEMBER 2025")
+// Titel på den øverste del af kalenderen(fx "DECEMBER 2025")
 const titel = document.getElementById("maanedTitel");
 
 // Container til alle dage i kalenderen
