@@ -85,10 +85,6 @@ pakkeKort.forEach(kort => {
 
 
 
-
-
-
-
 // STEP 2 – VÆLG LEJEPERIODE 
 
 // Find alle periodekort
