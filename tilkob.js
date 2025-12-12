@@ -1,3 +1,29 @@
+// Find knappen der fører videre til næste sektion
+const btn = document.querySelector("#btn");
+
+// Find næste sektion (lejeperiode)
+const lejePeriode = document.getElementById("baggrundscirkel2");
+
+// Find alle knapper med class="btn"
+const pakkeKnapper = document.querySelectorAll(".btn");
+
+// Find sektionen de skal scrolle til
+const lejePeriode2 = document.getElementById("baggrundscirkel3");
+
+
+// Klik på knap1 → scroll til næste sektion
+btn.addEventListener("click", () => {
+
+    lejePeriode.scrollIntoView({ behavior: "smooth" });
+});
+
+
+// Giv ALLE knapperne et klik-event
+pakkeKnapper.forEach(knap => {
+    knap.addEventListener("click", () => {
+        lejePeriode2.scrollIntoView({ behavior: "smooth" });
+    });
+});
 
 // ---------------------------------------------------
 // STEP 1 – VÆLG REOLPAKKE
@@ -17,14 +43,11 @@ const pakkeState = {
 
 // Funktion: opdaterer alle højre bokse med valgt pakke
 function opdaterPakkeVisning() {
-    pakkeFelter.forEach(function(felt) {
+    pakkeFelter.forEach(felt => {
         felt.textContent = pakkeState.label;
     });
-
 }
 
-// Gennemgå hvert kort og giv knappen et klik-event
-pakkeKort.forEach(function(kort) {
 
     // Man finder knappen inde i kortet
     const btn = kort.querySelector('.btn');

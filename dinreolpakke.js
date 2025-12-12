@@ -1,6 +1,7 @@
 // Henter alle elementer med klassen "card"
 const cards = document.querySelectorAll(".card");
 
+
 // Tilføjer en klik-event til hvert kort
 cards.forEach(card => {
     card.addEventListener("click", () => {
@@ -30,3 +31,6 @@ cards.forEach(card => {
         }
     });
 });
+
+
+
