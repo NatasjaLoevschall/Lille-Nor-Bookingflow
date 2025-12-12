@@ -98,13 +98,12 @@
   }
   
   /* VALGT kort */
-  .card.selected {
-    border-color: #d3ad73;           /* Gul ramme */
-    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-  }
-  
-  .card.selected .btn {
+#btn:hover, .btn:hover {
     background: #C4913D;
     color: #ffffff;
+  }
+  
+  .card:hover{
+    border-color: #d3ad73;           /* Gul ramme */
   }
   
